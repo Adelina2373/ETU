@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0,"");
+
+/* Задание 1 */
+    cout << "int: " << sizeof(int) << "\n";
+    cout << "short int: " << sizeof(short) << "\n";
+    cout << "long int: " << sizeof(long) << "\n";
+    cout << "float: " << sizeof(float) << "\n";
+    cout << "double: " << sizeof(double) << "\n";
+    cout << "long double: " << sizeof(long double) << "\n";
+    cout << "char: " << sizeof(char) << "\n";
+    cout << "bool: " << sizeof(bool) << "\n";
+
+/* Задание 2 */
+    cout << "Укажите значение: ";
+
+    int number;
+    cin >> number;
+
+    int digit = 32; 
+	int mask = 1 << digit - 1; 
+    
+	for (int i = 0; i < digit; i++) {
+	    if (i == 1 || i % 8 == 0)
+            cout << " ";
+        cout << (number & mask ? '1' : '0');
+        number <<= 1;
+    }
+
+/* Задание 3 */
+    cout << "\n";
+    cout << "Укажите значение: ";
+
+    union {
+        int numb;
+        float number_f;
+    };
+    cin >> number_f;
+    
+    int digit_f = 32; 
+	int mask_f = 1 << digit_f - 1; 
+    
+	for (int i = 0; i < digit_f; i++) {
+	    if (i == 1 || i % 8 == 0)
+            cout << " ";
+        cout << (numb & mask_f ? '1' : '0');
+        numb <<= 1;
+    }
+
+/* Задание 4 */
+    cout << "\n";
+    cout << "Укажите значение: ";
+
+    union {
+        int num[3];
+        double number_d;
+    };
+    cin >> number_d;
+    
+    int digit_d = 32; 
+	int mask_d = 1 << digit_d - 1; 
+    
+	for (int i = 0; i < digit_d; i++) {
+	    if (i == 1 || i % 8 == 0 || i == 12)
+            cout << " ";
+        cout << (num[1] & mask_d ? '1' : '0');
+        num[1] <<= 1;
+    }
+    for (int i = 0; i < digit_d; i++) {
+	    if (i % 8 == 0)
+            cout << " ";
+        cout << (num[0] & mask_d ? '1' : '0');
+        num[0] <<= 1;
+    }
+}
