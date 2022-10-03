@@ -1,0 +1,147 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    setlocale(0,"");
+    
+/* Задание 2 */
+    cout << "Укажите значение: ";
+    srand(time(NULL));
+    
+    int number;
+    cin >> number;
+
+    int digit = 32; 
+	int mask = 1 << digit - 1; 
+    if (number < 0) {
+    	for (int i = 0; i < digit; i++) {
+    	    if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 != 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (number & mask ? '1' : '0');
+            }
+            number <<= 1;
+        }}
+    else {
+        for (int i = 0; i < digit; i++) {
+            if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 == 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (number & mask ? '1' : '0');
+            }
+            number <<= 1;
+        }}
+    
+
+/* Задание 3 */
+    cout << "\n";
+    cout << "Укажите значение: ";
+    srand(time(NULL));
+
+    union {
+        int numb;
+        float number_f;
+    };
+    cin >> number_f;
+    
+    int digit_f = 32; 
+	int mask_f = 1 << digit_f - 1; 
+
+    if (numb < 0) {
+    	for (int i = 0; i < digit_f; i++) {
+    	    if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 != 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (numb & mask_f ? '1' : '0');
+            }
+            numb <<= 1;
+        }}
+    else {
+        for (int i = 0; i < digit_f; i++) {
+            if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 == 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (numb & mask_f ? '1' : '0');
+            }
+            numb <<= 1;
+        }}
+    
+
+/* Задание 4 */
+    cout << "\n";
+    cout << "Укажите значение: ";
+
+    union {
+        int num[3];
+        double number_d;
+    };
+    cin >> number_d;
+    
+    int digit_d = 32; 
+    	int mask_d = 1 << digit_d - 1; 
+    
+        if (num[1] < 0) {
+        	for (int i = 0; i < digit_d; i++) {
+        	    if (i == 1 || i % 8 == 0)
+                    cout << " ";
+                if (i % 2 != 0 & i > 1) {
+                    cout << rand() % 2;
+                }
+                else {
+                    cout << (num[1] & mask_d ? '1' : '0');
+                }
+                num[1] <<= 1;
+            }}
+    else {
+        for (int i = 0; i < digit_d; i++) {
+            if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 == 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (num[1] & mask_d ? '1' : '0');
+            }
+            num[1] <<= 1;
+        }}
+    
+
+    if (num[0] < 0) {
+    	for (int i = 0; i < digit_d; i++) {
+    	    if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 != 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (num[0] & mask_d ? '1' : '0');
+            }
+            num[0] <<= 1;
+        }}
+    else {
+        for (int i = 0; i < digit_d; i++) {
+            if (i == 1 || i % 8 == 0)
+                cout << " ";
+            if (i % 2 == 0 & i > 1) {
+                cout << rand() % 2;
+            }
+            else {
+                cout << (num[0] & mask_d ? '1' : '0');
+            }
+            num[0] <<= 1;
+        }}
+}
